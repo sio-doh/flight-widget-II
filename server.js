@@ -11,14 +11,14 @@ app.get('/flights', (req, res) => {
         method: 'GET',
         url: 'https://gibraltar-airport-feed.p.rapidapi.com/departures',
         headers: {
-            'X-RapidAPI-Key': process.env.RAPID_API_KEY, 
+            'X-RapidAPI-Key': process.env.RAPID_API_KEY,
             'X-RapidAPI-Host': 'gibraltar-airport-feed.p.rapidapi.com'
         }
-    }     
+    }
     axios.request(options).then(function(response) {
-        console.log(response.data);
-        // display first ten flights
-        res.json(response.data.slice(0,10));
+        console.log(response.data); 
+        // display first ten flights 
+        res.json(response.data.slice(0, 10));
     }).catch(function (error) {
         console.error(error);
     })
