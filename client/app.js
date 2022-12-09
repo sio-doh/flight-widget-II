@@ -30,10 +30,15 @@ const populateTable = (flights) => {
             // creating little arrays in order to create flight cards
             const tableCell = document.createElement('td'); 
             const word = Array.from(flightDetails[flightDetail]);
+            
             for (const [index, letter] of word.entries()) {
                 const letterElement = document.createElement('div'); 
-                letterElement.textContent = letter;
-                tableCell.append(letterElement);
+                
+                setTimeout(() => { 
+                    letterElement.classList.add('flip');
+                    letterElement.textContent = letter; 
+                    tableCell.append(letterElement);
+                }, 100 * index) 
             }
             tableRow.append(tableCell);
         }
