@@ -27,4 +27,12 @@ h1 {
 .departures table {
     background-color: rgb(57, 61, 71);
     text-align: left;
+} 
+
+.departures table div {
+    border: solid 4px rgb(26, 26, 26); 
+    background-color: rgb(0, 0, 0);
+    min-width: 20px;
+    height: 40px;
+    float: left;
 }
