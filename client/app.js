@@ -19,7 +19,7 @@ const populateTable = (flights) => {
         tableBody.append(tableRow);
 
         const flightDetails = {
-            time: flight.departing.slice(0,5), 
+            time: flight.departing.slice(0,10), 
             destination: flight.destination.toUpperCase(), 
             flight: flight.flightNumber.shift(), 
             gate: flight.gate, 
