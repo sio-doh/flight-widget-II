@@ -3,8 +3,8 @@ const tableBody = document.getElementById('table-body');
 const getFlight = () => {
     fetch('http://localhost:8000/flights')
         .then(response => response.json())
-        .then(flights => { 
-            populateTable(flights)
+        .then(flights => {  
+            console.log(populateTable(flights))
         })
         .catch(err => console.log(err))
 }
@@ -19,11 +19,11 @@ const populateTable = (flights) => {
         tableBody.append(tableRow);
 
         const flightDetails = {
-            time: flight.departing.slice(0,10), 
-            destination: flight.destination.toUpperCase(), 
-            flight: flight.flightNumber.shift(), 
-            gate: flight.gate, 
-            remarks: flight.status.toUpperCase()
+            time: flight.time.slice(0,10),
+            destination: flight.to.toUpperCase(), 
+            operator: flight.operator.shift(), 
+            code: flight.code, 
+            remarks: flight.status.toUpperCase() 
         }
 
         for (const flightDetail in flightDetails) { 

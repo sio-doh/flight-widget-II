@@ -16,9 +16,7 @@ app.get('/flights', (req, res) => {
         }
     };
     axios.request(options).then((response) => {
-        console.log(response.data); 
-        // display first ten flights
-        // res.json(response.data.isString().slice(0,10));
+        console.log(response.data.collection.items[0].data[0].value);
     }).catch((error) => {
         console.error(error);
     });
